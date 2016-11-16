@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Model-Controller</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
+	<script src="../js/index-controller.js"></script>
+</head>
+<body>
+		
+	<!-- <div data-ng-controller="pagesController">
+		<a href="{{page}}" data-ng-repeat="page in pages">{{ page }}</a>
+	</div> -->
+	<div data-ng-app="breadCrumb" data-ng-controller="pagesController">
+		Current Page:
+		<a href="page.url" data-ng-repeat="page in pages">
+	    	 \ {{ page.name }}
+	    </a>
+	</div><hr>
+    
+</body>
+</html>

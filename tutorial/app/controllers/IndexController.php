@@ -1,11 +1,18 @@
 <?php
 
-	use Phalcon\Mvc\Controller;
+use Phalcon\Mvc\Controller;
 
-	class IndexController extends Controller
-	{
-	    public function indexAction()
-	    {
-	        echo "<h1>Hello!</h1>";
-	    }
-	}
+class PostsController extends Controller
+{
+    public function initialize()
+    {
+        $this->view->setTemplateAfter("login");
+    }
+
+    public function indexAction()
+    {
+        $this->flash->notice(
+            "These are the latest posts"
+        );
+    }
+}

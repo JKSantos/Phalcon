@@ -6,7 +6,7 @@
 		<meta name="keywords" content="your,keywords">
 		<meta name="description" content="Short explanation about this website">
 
-		<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+		<link type="text/css" rel="stylesheet" href="../../public/css/bootstrap-css/bootstrap.css" />
         <title>Phalcon-Login</title>
 
         <style>
