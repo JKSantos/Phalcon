@@ -3,8 +3,8 @@
     <head>
         <title>ToDo</title>
 
-        <script data-require="angular.js@1.2.15" data-semver="1.2.15" src="http://code.angularjs.org/1.2.15/angular.js"></script>
-        <script data-require="ui-router@*" data-semver="0.2.8" src="http://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
         <script type="text/javascript" src="controller.js"></script>
         <style>
             .done{
@@ -15,16 +15,18 @@
     </head>
     <body>
         <div data-ng-controller="todoController">
-            <form name="frm" ng-submit="addToDo()">
-                <input type="text" name="newTodo" ng-model="newTodo" required/>
-                <button ng-disabled="frm.$invalid">Go</button>
-            </form>
             <ul>
-                <li data-ng-repeat="todo in todos">
-                    <input type="checkbox" ng-model="todo.done">
-                    <span ng-class="{'done':todo.done}">{{todo.title}}</span>
-                </li>
-            </ul>
+                Current Page:
+                <a href="{{ todo.address }}" data-ng-click="addToDo(todo.title, todo.address, todo.level)" data-ng-repeat="todo in todos">
+                    {{ todo.title }}/
+                </a>
+            </ul><hr>
+                <a href="#/HomePage" data-ng-click="addToDo('Home', '#/HomePage', '1')" >Home</a><br>
+                <a href="#/LinkPage" data-ng-click="addToDo('Links', '#/LinkPage', '1')">Links</a><br>
+                <a href="#/AboutPage" data-ng-click="addToDo('About Us', '#/AboutPage', '1')">About Us</a>
+
+            <div data-ng-view></div>
         </div>
+        
     </body>
 </html>
