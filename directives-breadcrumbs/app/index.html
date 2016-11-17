@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HOME</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
+	<script src="../js/index-controller.js"></script>
+	<link rel="stylesheet" type="text/css" ref="../css/style.css"/>
+
+</head>
+<body data-ng-app="breadCrumb" data-ng-controller="pagesController as c">
+		
+	<!-- <div data-ng-controller="pagesController">
+		<a href="{{page}}" data-ng-repeat="page in pages">{{ page }}</a>
+	</div> -->
+	<div>
+
+		Current Page:
+		<a href="" data-ng-repeat="page in c.pages" data-ng-model="c.pages">
+	    	 \ {{ page.name }}
+	    </a>
+	</div><hr>
+
+	<div id="sidenav" >
+		<button class="data-ng-new-page" data-ng-name="Home" data-ng-address="#/">Home</button><br>
+		<button class="data-ng-new-page" data-ng-name="Maintenance" data-ng-address="#/maintenance">Maintenance</button><br>
+		<button class="data-ng-new-page" data-ng-name="Transaction" data-ng-address="#/transaction">Transaction</button><br>
+	</div>
+
+    <div data-ng-view>
+
+	</div>
+    
+</body>
+</html>

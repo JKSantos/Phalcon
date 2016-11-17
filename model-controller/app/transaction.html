@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TRANSACTION</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
+	<style>
+        #body {
+            background : #e6e8f7;
+            width : 500px;
+            height : 250px;
+            margin-top : -50px;
+            margin-left : 130px;
+        }
+    </style>
+    
+</head>
+<body data-ng-app="breadCrumb">
+
+	<div id="body" data-ng-controller="pagesController" class="container">
+        <center>TRANSACTION</center><br>
+		<a href="#/transaction/sales" data-ng-click="addPage('#/sales', 'Sales')">Sales</a><br>
+		<a href="#/transaction/walkin" data-ng-click="addPage('#/walkin', 'Walk In')">Walk In</a><br>
+	</div>
+
+</body>
+</html>

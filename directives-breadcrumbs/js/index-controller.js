@@ -1,4 +1,3 @@
-
 var app = angular.module("breadCrumb", ['ngRoute']); 
 
 app.config(function($routeProvider) {
@@ -50,38 +49,18 @@ app.controller("pagesController",['$scope', '$http', function($scope, $http) {
 	// })
 
 }]);
-app.directive('nameList', function(){
-	return {
-		scope: {
-			a: '=ngListAll' // @, =, &
+
+app.directive('ngNewPage', function(){
+    return{
+        restrict : 'CA',
+		scope : {
+			pageName : '@ngName',
+			pageAddress : '@ngAddress'
 		},
-		restrict: 'A',
-		link: function(scope, el, attr) {
-			console.log(scope.a)
-			console.log(attr.id)
-			console.log(el);
-		}
-	}
+        link : function(scope, el, attr) {
+            angular.element(el).on('click', function(){
+                alert("Button " + scope.pageAddress);
+            })
+        }
+    }
 });
-app.directive('alertHelloWorld', ['$http',function($http){ 
-	return {
-		restrict: 'C',
-		link: function(scope, el, attr) {
-			angular.element(el).on('click',function(){
-			//	alert('hello world');
-			//$http()
-			})
-		}
-	}
-}]);
-
-app.directive('submitForm', ['$http',function($http){ 
-	return {
-		restrict: 'C',
-		link: function(scope, el, attr) {
-			console.log(angular.element(el).find('input')[0].value);
-			//$emit('hi', {name: 'dsfsfsd'}))
-		}
-	}
-}]);
-
